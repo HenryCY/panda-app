@@ -1,0 +1,25 @@
+《熊猫星际算术》iPad App 安装指南
+====================================
+
+本压缩包是一个完整的 iPad 离线 Web App（PWA）安装包，内含：
+- index.html        应用主程序（已适配 iPad 横竖屏、触屏防误缩放、刘海安全区）
+- manifest.json     iPad 主屏幕应用配置
+- sw.js             离线缓存服务（添加后断网也可玩）
+- icon-180/192/512.png  熊猫宇航员桌面图标
+
+【方法一：1 分钟免电脑/免苹果开发者账号安装到 iPad（推荐）】
+1. 解压本压缩包，得到 panda-math-ipad-pwa 文件夹。
+2. 打开免费静态托管网站（任选其一）：
+   - Netlify Drop: https://app.netlify.com/drop （直接把整个文件夹拖进去，立刻生成 https 网址）
+   - 或上传到 GitHub Pages / Cloudflare Pages / Vercel。
+3. 在 iPad 上打开 Safari 浏览器，访问刚才生成的 https 网址。
+4. 点击 Safari 右上角的「分享」按钮（方框带向上箭头）。
+5. 下滑点击「添加到主屏幕」→ 点「添加」。
+6. 回到 iPad 桌面，点击「熊猫算术」图标，即可像原生 App 一样全屏离线运行！
+
+【方法二：在 Mac 上打包成原生 iPad App（.ipa / Xcode 真机安装）】
+如果你有 Mac 电脑并安装了 Xcode，可以用 Capacitor 将本文件夹直接打包成原生 iPadOS App：
+1. npm init -y && npm install @capacitor/core @capacitor/cli @capacitor/ios
+2. npx cap init "熊猫星际算术" "com.pandamath.grade2" --web-dir .
+3. npx cap add ios && npx cap open ios
+4. 在 Xcode 中连接 iPad，选定你的 Apple ID 签名后点击 Run（▶️）即可直接安装到 iPad。
